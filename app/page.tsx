@@ -35,11 +35,11 @@ export default function HomePage() {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
             <Image
-              src="/logo_branca.webp"
+              src="/logo_sem_fundo.webp"
               alt="Sena Technologies"
-              width={200}
-              height={50}
-              className="h-8 w-auto"
+              width={250}
+              height={60}
+              className="h-16 w-auto"
             />
           </div>
 
@@ -807,9 +807,9 @@ export default function HomePage() {
                 <Image
                   src="/Frame-3.webp"
                   alt="Sena Technologies"
-                  width={200}
-                  height={50}
-                  className="h-10 w-auto"
+                  width={250}
+                  height={60}
+                  className="h-16 w-auto"
                 />
               </div>
               <p className="text-gray-400">
