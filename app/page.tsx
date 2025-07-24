@@ -799,7 +799,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
+      <footer className="text-white py-12" style={{ backgroundColor: '#00162D' }}>
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">

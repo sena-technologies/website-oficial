@@ -339,7 +339,7 @@ export default function ThankYouPage() {
       </main>
 
       {/* Footer Simplificado */}
-      <footer className="bg-slate-900 text-white py-8">
+      <footer className="text-white py-8" style={{ backgroundColor: '#00162D' }}>
         <div className="container px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
