@@ -1,7 +1,7 @@
 "use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, ArrowRight, Clock, Phone, Mail, MessageCircle, Home, FileText, Users } from "lucide-react"
+import { CheckCircle, ArrowRight, Clock, Phone, Mail, MessageCircle, Home, FileText, Users, Instagram, Facebook, Linkedin, Github } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
@@ -344,24 +344,65 @@ export default function ThankYouPage() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
               <Image
-                src="/eclipse-1.webp"
+                src="/logo_branca.webp"
                 alt="Sena Technologies"
                 width={200}
                 height={50}
-                className="h-6 w-auto"
+                className="h-6 w-auto brightness-0 invert"
               />
             </div>
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <Link href="/" className="hover:text-white transition-colors">
-                Início
-              </Link>
-              <Link href="/#servicos" className="hover:text-white transition-colors">
-                Serviços
-              </Link>
-              <Link href="/#contato" className="hover:text-white transition-colors">
-                Contato
-              </Link>
+            
+            <div className="flex items-center space-x-8">
+              {/* Links de navegação */}
+              <div className="flex items-center space-x-6 text-sm text-gray-400">
+                <Link href="/" className="hover:text-white transition-colors">
+                  Início
+                </Link>
+                <Link href="/#servicos" className="hover:text-white transition-colors">
+                  Serviços
+                </Link>
+                <Link href="/#contato" className="hover:text-white transition-colors">
+                  Contato
+                </Link>
+              </div>
+
+              {/* Redes Sociais */}
+              <div className="flex space-x-3">
+                <Link 
+                  href="https://instagram.com/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-4 w-4 text-white" />
+                </Link>
+                <Link 
+                  href="https://facebook.com/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="h-4 w-4 text-white" />
+                </Link>
+                <Link 
+                  href="https://linkedin.com/company/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-4 w-4 text-white" />
+                </Link>
+                <Link 
+                  href="https://github.com/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-4 w-4 text-white" />
+                </Link>
+              </div>
             </div>
+
             <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Sena Technologies</p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, CheckCircle, Code, Smartphone, Globe, Zap, Users, Target, Eye, Heart } from "lucide-react"
+import { ArrowRight, CheckCircle, Code, Smartphone, Globe, Zap, Users, Target, Eye, Heart, Instagram, Facebook, Linkedin, Github } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import ContactForm from "./components/contact-form"
@@ -720,8 +720,46 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-right text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Sena Technologies. Todos os direitos reservados.</p>
+          <div className="border-t border-gray-800 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+              <p className="text-gray-400">&copy; {new Date().getFullYear()} Sena Technologies. Todos os direitos reservados.</p>
+              
+              {/* Redes Sociais */}
+              <div className="flex space-x-3">
+                <Link 
+                  href="https://instagram.com/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-4 w-4 text-white" />
+                </Link>
+                <Link 
+                  href="https://facebook.com/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="h-4 w-4 text-white" />
+                </Link>
+                <Link 
+                  href="https://linkedin.com/company/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-4 w-4 text-white" />
+                </Link>
+                <Link 
+                  href="https://github.com/senatechnologies" 
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-4 w-4 text-white" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
