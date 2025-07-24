@@ -30,7 +30,7 @@ export default function ThankYouPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
-            <Image src="/logo-sena.webp" alt="Sena Technologies" width={180} height={40} className="h-8 w-auto" />
+            <Image src="/logo_branca.webp" alt="Sena Technologies" width={200} height={50} className="h-8 w-auto" />
           </div>
 
           <nav className="hidden md:flex items-center space-x-6">
@@ -344,11 +344,11 @@ export default function ThankYouPage() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
               <Image
-                src="/logo-sena.webp"
+                src="/eclipse-1.webp"
                 alt="Sena Technologies"
-                width={150}
-                height={32}
-                className="h-6 w-auto brightness-0 invert"
+                width={200}
+                height={50}
+                className="h-6 w-auto"
               />
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-400">

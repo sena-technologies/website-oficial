@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Analytics from "./components/analytics"
@@ -9,6 +9,7 @@ import { Suspense } from "react"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://senatechnologies.com'),
   title: "Sena Technologies - Soluções que movem o seu negócio para o próximo nível",
   description:
     "Especialistas em transformação digital para pequenas empresas, MEIs e profissionais liberais. Desenvolvimento web, apps, sistemas personalizados, bots e integrações.",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Sena Technologies",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/Frame-3.webp",
         width: 1200,
         height: 630,
         alt: "Sena Technologies - Soluções em Tecnologia",
@@ -39,11 +40,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sena Technologies - Soluções Inovadoras em Tecnologia",
     description: "Transformamos ideias em soluções digitais. Entre em contato!",
-    images: ["/og-image.jpg"],
+    images: ["/logo_oficial_sem_tagline.webp"],
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#06b6d4",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#06b6d4',
 }
 
 export default function RootLayout({
@@ -54,10 +59,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="/favicon.webp" />
+        <link rel="icon" type="image/webp" sizes="32x32" href="/ellipse-1.webp" />
+        <link rel="icon" type="image/webp" sizes="16x16" href="/ellipse-1.webp" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/ellipse-1.webp" />
+        <meta name="msapplication-TileImage" content="/ellipse-1.webp" />
         <link rel="canonical" href="https://senatechnologies.com" />
-        <meta name="geo.region" content="BR-SP" />
-        <meta name="geo.placename" content="São Paulo" />
+        <meta name="geo.region" content="BR-SC" />
+        <meta name="geo.placename" content="JOINVILLE" />
         <meta name="geo.position" content="-23.5505;-46.6333" />
         <meta name="ICBM" content="-23.5505, -46.6333" />
       </head>

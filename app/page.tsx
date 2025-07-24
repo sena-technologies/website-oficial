@@ -13,7 +13,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
-            <Image src="/logo-sena.webp" alt="Sena Technologies" width={180} height={40} className="h-8 w-auto" />
+            <Image src="/logo_branca.webp" alt="Sena Technologies" width={200} height={50} className="h-8 w-auto" />
           </div>
 
           <nav className="hidden md:flex items-center space-x-6">
@@ -78,7 +78,7 @@ export default function HomePage() {
                     <div className="text-sm text-muted-foreground">Projetos</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-cyan-600">100%</div>
+                    <div className="text-2xl font-bold text-cyan-600">95%</div>
                     <div className="text-sm text-muted-foreground">Satisfação</div>
                   </div>
                   <div className="text-center">
@@ -510,11 +510,11 @@ export default function HomePage() {
             <div className="mt-16 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8">
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">98%</div>
+                  <div className="text-3xl font-bold text-cyan-600 mb-2">95%</div>
                   <div className="text-sm text-muted-foreground">Clientes Satisfeitos</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">250%</div>
+                  <div className="text-3xl font-bold text-cyan-600 mb-2">45%</div>
                   <div className="text-sm text-muted-foreground">Aumento Médio de Vendas</div>
                 </div>
                 <div>
@@ -617,7 +617,7 @@ export default function HomePage() {
                     <h4 className="font-bold text-lg mb-4 text-center">Nossos Números</h4>
                     <div className="grid grid-cols-2 gap-4 text-center">
                       <div>
-                        <div className="text-2xl font-bold text-cyan-600">98%</div>
+                        <div className="text-2xl font-bold text-cyan-600">95%</div>
                         <div className="text-sm text-muted-foreground">Satisfação</div>
                       </div>
                       <div>
@@ -648,11 +648,11 @@ export default function HomePage() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <Image
-                  src="/logo-sena.webp"
+                  src="/Frame-3.webp"
                   alt="Sena Technologies"
-                  width={150}
-                  height={32}
-                  className="h-6 w-auto brightness-0 invert"
+                  width={200}
+                  height={50}
+                  className="h-10 w-auto"
                 />
               </div>
               <p className="text-gray-400">Transformando ideias em soluções digitais inovadoras.</p>
@@ -715,12 +715,12 @@ export default function HomePage() {
               <ul className="space-y-2 text-gray-400">
                 <li>contato@senatechnologies.com</li>
                 <li>(11) 9999-9999</li>
-                <li>São Paulo, SP</li>
+                <li>Joinville, SC</li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 mt-8 pt-8 text-right text-gray-400">
             <p>&copy; {new Date().getFullYear()} Sena Technologies. Todos os direitos reservados.</p>
           </div>
         </div>
