@@ -1,10 +1,31 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, CheckCircle, Code, Smartphone, Globe, Zap, Users, Target, Eye, Heart } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import ContactForm from "./components/contact-form"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowRight,
+  CheckCircle,
+  Code,
+  Smartphone,
+  Globe,
+  Zap,
+  Users,
+  Target,
+  Eye,
+  Heart,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Github,
+} from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import ContactForm from "./components/contact-form";
 
 export default function HomePage() {
   return (
@@ -13,26 +34,49 @@ export default function HomePage() {
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
-            <Image src="/logo-sena.webp" alt="Sena Technologies" width={180} height={40} className="h-8 w-auto" />
+            <Image
+              src="/logo_sem_fundo.webp"
+              alt="Sena Technologies"
+              width={250}
+              height={60}
+              className="h-16 w-auto"
+            />
           </div>
 
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="#sobre" className="text-sm font-medium hover:text-cyan-600 transition-colors">
+            <Link
+              href="#sobre"
+              className="text-sm font-medium hover:text-cyan-600 transition-colors"
+            >
               Sobre
             </Link>
-            <Link href="#servicos" className="text-sm font-medium hover:text-cyan-600 transition-colors">
+            <Link
+              href="#servicos"
+              className="text-sm font-medium hover:text-cyan-600 transition-colors"
+            >
               Serviços
             </Link>
-            <Link href="#valores" className="text-sm font-medium hover:text-cyan-600 transition-colors">
+            <Link
+              href="#valores"
+              className="text-sm font-medium hover:text-cyan-600 transition-colors"
+            >
               Valores
             </Link>
-            <Link href="#contato" className="text-sm font-medium hover:text-cyan-600 transition-colors">
+            <Link
+              href="#contato"
+              className="text-sm font-medium hover:text-cyan-600 transition-colors"
+            >
               Contato
             </Link>
           </nav>
 
           <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-blue-700 hover:to-purple-700">
-            Fale Conosco
+            <Link
+              href="#contato"
+              className="text-sm font-medium hover:text-cyan-600 transition-colors"
+            >
+              Fale Conosco
+            </Link>
           </Button>
         </div>
       </header>
@@ -45,7 +89,9 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <Badge className="bg-cyan-100 text-cyan-700 hover:bg-cyan-200">🚀 Transformação Digital</Badge>
+                  <Badge className="bg-cyan-100 text-cyan-700 hover:bg-cyan-200">
+                    🚀 Transformação Digital
+                  </Badge>
                   <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                     Soluções que movem o{" "}
                     <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
@@ -54,8 +100,9 @@ export default function HomePage() {
                     para o próximo nível
                   </h1>
                   <p className="text-xl text-muted-foreground max-w-lg">
-                    Especialistas em levar pequenas empresas, MEIs e profissionais liberais para o mundo digital com
-                    soluções acessíveis e eficazes.
+                    Especialistas em levar pequenas empresas, MEIs e
+                    profissionais liberais para o mundo digital com soluções
+                    acessíveis e eficazes.
                   </p>
                 </div>
 
@@ -64,22 +111,37 @@ export default function HomePage() {
                     size="lg"
                     className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-blue-700 hover:to-purple-700"
                   >
-                    Iniciar Projeto
+                    <Link
+                      href="#contato"
+                      className="text-sm font-medium hover:text-cyan-600 transition-colors"
+                    >
+                      Iniciar Projeto
+                    </Link>
+
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                   <Button size="lg" variant="outline">
-                    Conhecer Serviços
+                    <Link
+                      href="#servicos"
+                      className="text-sm font-medium hover:text-cyan-600 transition-colors"
+                    >
+                      Conhecer Serviços
+                    </Link>
                   </Button>
                 </div>
 
                 <div className="flex items-center space-x-8 pt-8">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-cyan-600">50+</div>
-                    <div className="text-sm text-muted-foreground">Projetos</div>
+                    <div className="text-sm text-muted-foreground">
+                      Projetos
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-cyan-600">100%</div>
-                    <div className="text-sm text-muted-foreground">Satisfação</div>
+                    <div className="text-2xl font-bold text-cyan-600">95%</div>
+                    <div className="text-sm text-muted-foreground">
+                      Satisfação
+                    </div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-cyan-600">24/7</div>
@@ -107,10 +169,13 @@ export default function HomePage() {
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
               <Badge className="bg-cyan-100 text-cyan-700">Sobre Nós</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">Quem é a Sena Technologies</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Quem é a Sena Technologies
+              </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Somos uma empresa de tecnologia focada em entregar soluções inovadoras e de alta qualidade para empresas
-                que buscam se destacar no mercado digital.
+                Somos uma empresa de tecnologia focada em entregar soluções
+                inovadoras e de alta qualidade para empresas que buscam se
+                destacar no mercado digital.
               </p>
             </div>
 
@@ -124,8 +189,9 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    Desenvolver soluções tecnológicas inovadoras que transformem negócios e criem valor real para nossos
-                    clientes, sempre com excelência e comprometimento.
+                    Desenvolver soluções tecnológicas inovadoras que transformem
+                    negócios e criem valor real para nossos clientes, sempre com
+                    excelência e comprometimento.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -139,8 +205,9 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    Ser reconhecida como referência em soluções tecnológicas inovadoras, contribuindo para a
-                    transformação digital das empresas brasileiras.
+                    Ser reconhecida como referência em soluções tecnológicas
+                    inovadoras, contribuindo para a transformação digital das
+                    empresas brasileiras.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -154,8 +221,9 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    Inovação, qualidade, transparência, comprometimento e foco no cliente são os pilares que guiam todas
-                    as nossas decisões e ações.
+                    Inovação, qualidade, transparência, comprometimento e foco
+                    no cliente são os pilares que guiam todas as nossas decisões
+                    e ações.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -164,14 +232,21 @@ export default function HomePage() {
         </section>
 
         {/* Serviços Section */}
-        <section id="servicos" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section
+          id="servicos"
+          className="py-20 bg-gradient-to-br from-slate-50 to-blue-50"
+        >
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
-              <Badge className="bg-cyan-100 text-cyan-700">Nossos Serviços</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">Soluções Completas em Tecnologia</h2>
+              <Badge className="bg-cyan-100 text-cyan-700">
+                Nossos Serviços
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Soluções Completas em Tecnologia
+              </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Oferecemos um portfólio completo de serviços para atender todas as necessidades tecnológicas do seu
-                negócio.
+                Oferecemos um portfólio completo de serviços para atender todas
+                as necessidades tecnológicas do seu negócio.
               </p>
             </div>
 
@@ -183,7 +258,8 @@ export default function HomePage() {
                   </div>
                   <CardTitle>Desenvolvimento Web</CardTitle>
                   <CardDescription>
-                    Sites profissionais e lojas virtuais que convertem visitantes em clientes.
+                    Sites profissionais e lojas virtuais que convertem
+                    visitantes em clientes.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -211,7 +287,8 @@ export default function HomePage() {
                   </div>
                   <CardTitle>Sistemas Personalizados</CardTitle>
                   <CardDescription>
-                    Sistemas sob medida para automatizar e otimizar seus processos de negócio.
+                    Sistemas sob medida para automatizar e otimizar seus
+                    processos de negócio.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -239,7 +316,8 @@ export default function HomePage() {
                   </div>
                   <CardTitle>Apps Mobile</CardTitle>
                   <CardDescription>
-                    Aplicativos móveis para aproximar você dos seus clientes onde eles estão.
+                    Aplicativos móveis para aproximar você dos seus clientes
+                    onde eles estão.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -267,7 +345,8 @@ export default function HomePage() {
                   </div>
                   <CardTitle>Suporte & Manutenção</CardTitle>
                   <CardDescription>
-                    Suporte técnico dedicado para manter seus sistemas sempre funcionando perfeitamente.
+                    Suporte técnico dedicado para manter seus sistemas sempre
+                    funcionando perfeitamente.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -295,7 +374,8 @@ export default function HomePage() {
                   </div>
                   <CardTitle>Bots & Integrações</CardTitle>
                   <CardDescription>
-                    Automatize atendimento e integre sistemas para otimizar sua operação.
+                    Automatize atendimento e integre sistemas para otimizar sua
+                    operação.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -324,9 +404,12 @@ export default function HomePage() {
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
               <Badge className="bg-cyan-100 text-cyan-700">Depoimentos</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">O que nossos clientes dizem</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                O que nossos clientes dizem
+              </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Veja como a Sena Technologies transformou negócios e impulsionou o crescimento de nossos clientes.
+                Veja como a Sena Technologies transformou negócios e impulsionou
+                o crescimento de nossos clientes.
               </p>
             </div>
 
@@ -343,7 +426,9 @@ export default function HomePage() {
                     />
                     <div>
                       <h4 className="font-semibold">Maria Silva</h4>
-                      <p className="text-sm text-muted-foreground">Consultora de Beleza - MEI</p>
+                      <p className="text-sm text-muted-foreground">
+                        Consultora de Beleza - MEI
+                      </p>
                     </div>
                   </div>
                   <div className="flex mb-4">
@@ -354,8 +439,9 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "Depois do site que a Sena fez para mim, minhas vendas aumentaram 300%! Agora recebo clientes de
-                    toda a cidade através do Google. Investimento que se pagou em 2 meses!"
+                    "Depois do site que a Sena fez para mim, minhas vendas
+                    aumentaram 300%! Agora recebo clientes de toda a cidade
+                    através do Google. Investimento que se pagou em 2 meses!"
                   </p>
                 </CardContent>
               </Card>
@@ -372,7 +458,9 @@ export default function HomePage() {
                     />
                     <div>
                       <h4 className="font-semibold">João Santos</h4>
-                      <p className="text-sm text-muted-foreground">Dono - Padaria do João</p>
+                      <p className="text-sm text-muted-foreground">
+                        Dono - Padaria do João
+                      </p>
                     </div>
                   </div>
                   <div className="flex mb-4">
@@ -383,8 +471,10 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "O sistema de pedidos online revolucionou minha padaria! Agora os clientes fazem pedidos pelo
-                    WhatsApp automaticamente. Economizo 4 horas por dia e vendo 50% mais."
+                    "O sistema de pedidos online revolucionou minha padaria!
+                    Agora os clientes fazem pedidos pelo WhatsApp
+                    automaticamente. Economizo 4 horas por dia e vendo 50%
+                    mais."
                   </p>
                 </CardContent>
               </Card>
@@ -401,7 +491,9 @@ export default function HomePage() {
                     />
                     <div>
                       <h4 className="font-semibold">Dra. Ana Costa</h4>
-                      <p className="text-sm text-muted-foreground">Advogada Autônoma</p>
+                      <p className="text-sm text-muted-foreground">
+                        Advogada Autônoma
+                      </p>
                     </div>
                   </div>
                   <div className="flex mb-4">
@@ -412,8 +504,9 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "Meu escritório ganhou credibilidade com o site profissional. Captei 15 novos clientes só no
-                    primeiro mês! O investimento se pagou rapidamente."
+                    "Meu escritório ganhou credibilidade com o site
+                    profissional. Captei 15 novos clientes só no primeiro mês! O
+                    investimento se pagou rapidamente."
                   </p>
                 </CardContent>
               </Card>
@@ -430,7 +523,9 @@ export default function HomePage() {
                     />
                     <div>
                       <h4 className="font-semibold">Carlos Oliveira</h4>
-                      <p className="text-sm text-muted-foreground">Dono - Loja de Roupas</p>
+                      <p className="text-sm text-muted-foreground">
+                        Dono - Loja de Roupas
+                      </p>
                     </div>
                   </div>
                   <div className="flex mb-4">
@@ -441,8 +536,9 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "O e-commerce que desenvolveram triplicou minhas vendas! Agora vendo para o Brasil todo. A equipe da
-                    Sena é muito profissional e sempre disponível."
+                    "O e-commerce que desenvolveram triplicou minhas vendas!
+                    Agora vendo para o Brasil todo. A equipe da Sena é muito
+                    profissional e sempre disponível."
                   </p>
                 </CardContent>
               </Card>
@@ -470,8 +566,9 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "O sistema de agendamento online mudou minha clínica! Reduzi faltas em 80% e minha agenda está
-                    sempre lotada. Recomendo a Sena para todos os colegas!"
+                    "O sistema de agendamento online mudou minha clínica! Reduzi
+                    faltas em 80% e minha agenda está sempre lotada. Recomendo a
+                    Sena para todos os colegas!"
                   </p>
                 </CardContent>
               </Card>
@@ -488,7 +585,9 @@ export default function HomePage() {
                     />
                     <div>
                       <h4 className="font-semibold">Roberto Ferreira</h4>
-                      <p className="text-sm text-muted-foreground">Mecânico Autônomo</p>
+                      <p className="text-sm text-muted-foreground">
+                        Mecânico Autônomo
+                      </p>
                     </div>
                   </div>
                   <div className="flex mb-4">
@@ -499,8 +598,9 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    "Nunca pensei que precisava de um site, mas a Sena me mostrou como isso mudaria meu negócio. Hoje
-                    recebo 10 clientes novos por semana só pelo Google!"
+                    "Nunca pensei que precisava de um site, mas a Sena me
+                    mostrou como isso mudaria meu negócio. Hoje recebo 10
+                    clientes novos por semana só pelo Google!"
                   </p>
                 </CardContent>
               </Card>
@@ -510,20 +610,36 @@ export default function HomePage() {
             <div className="mt-16 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8">
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">98%</div>
-                  <div className="text-sm text-muted-foreground">Clientes Satisfeitos</div>
+                  <div className="text-3xl font-bold text-cyan-600 mb-2">
+                    95%
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Clientes Satisfeitos
+                  </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">250%</div>
-                  <div className="text-sm text-muted-foreground">Aumento Médio de Vendas</div>
+                  <div className="text-3xl font-bold text-cyan-600 mb-2">
+                    45%
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Aumento Médio de Vendas
+                  </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">30 dias</div>
-                  <div className="text-sm text-muted-foreground">Tempo Médio de Entrega</div>
+                  <div className="text-3xl font-bold text-cyan-600 mb-2">
+                    30 dias
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Tempo Médio de Entrega
+                  </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">24/7</div>
-                  <div className="text-sm text-muted-foreground">Suporte Disponível</div>
+                  <div className="text-3xl font-bold text-cyan-600 mb-2">
+                    24/7
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Suporte Disponível
+                  </div>
                 </div>
               </div>
             </div>
@@ -531,14 +647,22 @@ export default function HomePage() {
         </section>
 
         {/* Contact Form Section */}
-        <section id="contato" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section
+          id="contato"
+          className="py-20 bg-gradient-to-br from-slate-50 to-blue-50"
+        >
           <div className="container px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-center space-y-4 mb-12">
-                <Badge className="bg-cyan-100 text-cyan-700">Fale Conosco</Badge>
-                <h2 className="text-3xl md:text-4xl font-bold">Pronto para transformar seu negócio?</h2>
+                <Badge className="bg-cyan-100 text-cyan-700">
+                  Fale Conosco
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Pronto para transformar seu negócio?
+                </h2>
                 <p className="text-xl text-muted-foreground">
-                  Preencha o formulário abaixo e receba uma proposta personalizada em até 2 horas úteis.
+                  Preencha o formulário abaixo e receba uma proposta
+                  personalizada em até 2 horas úteis.
                 </p>
               </div>
 
@@ -546,8 +670,13 @@ export default function HomePage() {
                 {/* Formulário */}
                 <Card className="border-0 shadow-xl">
                   <CardHeader>
-                    <CardTitle className="text-2xl">Solicite seu orçamento gratuito</CardTitle>
-                    <CardDescription>Conte-nos sobre seu projeto e receba uma proposta personalizada</CardDescription>
+                    <CardTitle className="text-2xl">
+                      Solicite seu orçamento gratuito
+                    </CardTitle>
+                    <CardDescription>
+                      Conte-nos sobre seu projeto e receba uma proposta
+                      personalizada
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ContactForm />
@@ -557,7 +686,9 @@ export default function HomePage() {
                 {/* Informações de Contato */}
                 <div className="space-y-8">
                   <div>
-                    <h3 className="text-2xl font-bold mb-6">Entre em contato conosco</h3>
+                    <h3 className="text-2xl font-bold mb-6">
+                      Entre em contato conosco
+                    </h3>
                     <div className="space-y-6">
                       <div className="flex items-center space-x-4">
                         <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
@@ -565,7 +696,9 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h4 className="font-semibold">Email</h4>
-                          <p className="text-muted-foreground">contato@senatechnologies.com</p>
+                          <p className="text-muted-foreground">
+                            contato@senatechnologies.com
+                          </p>
                         </div>
                       </div>
 
@@ -575,7 +708,9 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h4 className="font-semibold">Telefone</h4>
-                          <p className="text-muted-foreground">(11) 9999-9999</p>
+                          <p className="text-muted-foreground">
+                            (11) 9999-9999
+                          </p>
                         </div>
                       </div>
 
@@ -585,14 +720,18 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h4 className="font-semibold">WhatsApp</h4>
-                          <p className="text-muted-foreground">(11) 9999-9999</p>
+                          <p className="text-muted-foreground">
+                            (11) 9999-9999
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-6 text-white">
-                    <h4 className="font-bold text-lg mb-4">Por que escolher a Sena Technologies?</h4>
+                    <h4 className="font-bold text-lg mb-4">
+                      Por que escolher a Sena Technologies?
+                    </h4>
                     <ul className="space-y-3">
                       <li className="flex items-center">
                         <CheckCircle className="h-5 w-5 mr-3 flex-shrink-0" />
@@ -614,23 +753,41 @@ export default function HomePage() {
                   </div>
 
                   <div className="bg-white rounded-2xl p-6 shadow-lg">
-                    <h4 className="font-bold text-lg mb-4 text-center">Nossos Números</h4>
+                    <h4 className="font-bold text-lg mb-4 text-center">
+                      Nossos Números
+                    </h4>
                     <div className="grid grid-cols-2 gap-4 text-center">
                       <div>
-                        <div className="text-2xl font-bold text-cyan-600">98%</div>
-                        <div className="text-sm text-muted-foreground">Satisfação</div>
+                        <div className="text-2xl font-bold text-cyan-600">
+                          95%
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Satisfação
+                        </div>
                       </div>
                       <div>
-                        <div className="text-2xl font-bold text-cyan-600">2h</div>
-                        <div className="text-sm text-muted-foreground">Resposta</div>
+                        <div className="text-2xl font-bold text-cyan-600">
+                          2h
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Resposta
+                        </div>
                       </div>
                       <div>
-                        <div className="text-2xl font-bold text-cyan-600">50+</div>
-                        <div className="text-sm text-muted-foreground">Projetos</div>
+                        <div className="text-2xl font-bold text-cyan-600">
+                          50+
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Projetos
+                        </div>
                       </div>
                       <div>
-                        <div className="text-2xl font-bold text-cyan-600">24/7</div>
-                        <div className="text-sm text-muted-foreground">Suporte</div>
+                        <div className="text-2xl font-bold text-cyan-600">
+                          24/7
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Suporte
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -642,42 +799,56 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
+      <footer className="text-white py-12" style={{ backgroundColor: '#00162D' }}>
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <Image
-                  src="/logo-sena.webp"
+                  src="/Frame-3.webp"
                   alt="Sena Technologies"
-                  width={150}
-                  height={32}
-                  className="h-6 w-auto brightness-0 invert"
+                  width={250}
+                  height={60}
+                  className="h-16 w-auto"
                 />
               </div>
-              <p className="text-gray-400">Transformando ideias em soluções digitais inovadoras.</p>
+              <p className="text-gray-400">
+                Transformando ideias em soluções digitais inovadoras.
+              </p>
             </div>
 
             <div>
               <h3 className="font-semibold mb-4">Serviços</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#servicos"
+                    className="hover:text-white transition-colors"
+                  >
                     Desenvolvimento Web
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#servicos"
+                    className="hover:text-white transition-colors"
+                  >
                     Apps Mobile
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#servicos"
+                    className="hover:text-white transition-colors"
+                  >
                     Sistemas
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#servicos"
+                    className="hover:text-white transition-colors"
+                  >
                     Consultoria
                   </Link>
                 </li>
@@ -688,22 +859,34 @@ export default function HomePage() {
               <h3 className="font-semibold mb-4">Empresa</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#sobre"
+                    className="hover:text-white transition-colors"
+                  >
                     Sobre
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#valores"
+                    className="hover:text-white transition-colors"
+                  >
                     Valores
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#carreira"
+                    className="hover:text-white transition-colors"
+                  >
                     Carreira
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link
+                    href="#blog"
+                    className="hover:text-white transition-colors"
+                  >
                     Blog
                   </Link>
                 </li>
@@ -715,16 +898,57 @@ export default function HomePage() {
               <ul className="space-y-2 text-gray-400">
                 <li>contato@senatechnologies.com</li>
                 <li>(11) 9999-9999</li>
-                <li>São Paulo, SP</li>
+                <li>Joinville, SC</li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Sena Technologies. Todos os direitos reservados.</p>
+          <div className="border-t border-gray-800 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+              <p className="text-gray-400">
+                &copy; {new Date().getFullYear()} Sena Technologies. Todos os
+                direitos reservados.
+              </p>
+
+              {/* Redes Sociais */}
+              <div className="flex space-x-3">
+                <Link
+                  href="https://instagram.com/senatechnologies"
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-4 w-4 text-white" />
+                </Link>
+                <Link
+                  href="https://facebook.com/senatechnologies"
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="h-4 w-4 text-white" />
+                </Link>
+                <Link
+                  href="https://linkedin.com/company/senatechnologies"
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-4 w-4 text-white" />
+                </Link>
+                <Link
+                  href="https://github.com/senatechnologies"
+                  className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-4 w-4 text-white" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
