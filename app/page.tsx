@@ -25,7 +25,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import ContactForm from "./components/contact-form";
+import ContactFormNew from "./components/contact-form-new";
+import FormDebugTest from "./components/debug-form";
 
 export default function HomePage() {
   return (
@@ -152,13 +153,84 @@ export default function HomePage() {
 
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-3xl" />
-                <Image
-                  src="/placeholder.svg?height=600&width=600"
-                  alt="Sena Technologies Workspace"
-                  width={600}
-                  height={600}
-                  className="relative rounded-2xl shadow-2xl"
-                />
+                
+                {/* Grid de showcases de projetos */}
+                <div className="relative grid grid-cols-2 gap-4 p-6 bg-white rounded-2xl shadow-2xl">
+                  {/* Dashboard mockup */}
+                  <div className="relative h-32 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-4 border">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-2 bg-cyan-200 rounded w-3/4"></div>
+                      <div className="h-2 bg-blue-200 rounded w-1/2"></div>
+                      <div className="flex space-x-2">
+                        <div className="h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded w-1/3"></div>
+                        <div className="h-8 bg-gray-200 rounded w-1/4"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile app mockup */}
+                  <div className="relative h-32 bg-gradient-to-br from-slate-900 to-slate-700 rounded-lg p-3 flex flex-col">
+                    <div className="bg-gray-600 h-1 w-1/3 rounded mx-auto mb-2"></div>
+                    <div className="flex-1 bg-white rounded-md p-2">
+                      <div className="space-y-1">
+                        <div className="h-1.5 bg-cyan-300 rounded w-full"></div>
+                        <div className="h-1.5 bg-blue-300 rounded w-2/3"></div>
+                        <div className="mt-2 grid grid-cols-2 gap-1">
+                          <div className="h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded"></div>
+                          <div className="h-3 bg-gray-200 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* E-commerce mockup */}
+                  <div className="relative h-32 bg-white rounded-lg p-3 border border-gray-200">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="h-2 bg-cyan-500 rounded w-1/4"></div>
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-gray-300 rounded"></div>
+                        <div className="w-2 h-2 bg-gray-300 rounded"></div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 h-16">
+                      <div className="bg-gray-100 rounded p-1">
+                        <div className="h-8 bg-gradient-to-br from-cyan-200 to-blue-200 rounded mb-1"></div>
+                        <div className="h-1 bg-gray-300 rounded w-3/4"></div>
+                      </div>
+                      <div className="bg-gray-100 rounded p-1">
+                        <div className="h-8 bg-gradient-to-br from-blue-200 to-purple-200 rounded mb-1"></div>
+                        <div className="h-1 bg-gray-300 rounded w-2/3"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Analytics/Growth chart */}
+                  <div className="relative h-32 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-3 border">
+                    <div className="flex items-end justify-between h-full space-x-1">
+                      <div className="bg-gradient-to-t from-cyan-500 to-cyan-400 rounded-sm w-3" style={{height: '40%'}}></div>
+                      <div className="bg-gradient-to-t from-blue-500 to-blue-400 rounded-sm w-3" style={{height: '60%'}}></div>
+                      <div className="bg-gradient-to-t from-cyan-600 to-cyan-500 rounded-sm w-3" style={{height: '80%'}}></div>
+                      <div className="bg-gradient-to-t from-blue-600 to-blue-500 rounded-sm w-3" style={{height: '90%'}}></div>
+                      <div className="bg-gradient-to-t from-cyan-700 to-cyan-600 rounded-sm w-3" style={{height: '100%'}}></div>
+                    </div>
+                    <div className="absolute top-2 right-2">
+                      <div className="text-xs font-bold text-green-600">📈 +300%</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating badges */}
+                <div className="absolute -top-4 -left-4 bg-white rounded-full p-3 shadow-lg border-4 border-cyan-100">
+                  <Code className="h-6 w-6 text-cyan-600" />
+                </div>
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg border-4 border-blue-100">
+                  <Smartphone className="h-6 w-6 text-blue-600" />
+                </div>
               </div>
             </div>
           </div>
@@ -679,7 +751,7 @@ export default function HomePage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ContactForm />
+                    <ContactFormNew />
                   </CardContent>
                 </Card>
 
