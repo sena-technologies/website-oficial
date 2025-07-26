@@ -26,7 +26,6 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import ContactFormNew from "./components/contact-form-new";
-import FormDebugTest from "./components/debug-form";
 
 export default function HomePage() {
   return (
