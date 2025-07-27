@@ -33,18 +33,13 @@ export async function createHubSpotContact(
       return { success: false, error: 'API key não configurada' };
     }
 
-    // Preparar dados para o HubSpot
+    // Preparar dados para o HubSpot (apenas propriedades básicas)
     const properties = {
       email: contactData.email,
       firstname: contactData.firstname,
       lastname: contactData.lastname || '',
       company: contactData.company || '',
-      phone: contactData.phone || '',
-      message: contactData.message || '',
-      website: 'senatechnologies.com',
-      lifecyclestage: 'lead',
-      lead_source: 'website_form',
-      hs_lead_status: 'NEW'
+      phone: contactData.phone || ''
     };
 
     // Fazer requisição para a API do HubSpot
@@ -62,6 +57,12 @@ export async function createHubSpotContact(
     if (response.ok) {
       const contact = await response.json();
       console.log('Contato criado no HubSpot:', contact.id);
+      
+      // Se há mensagem, adicionar como nota
+      if (contactData.message) {
+        await addNoteToContact(contact.id, contactData.message, HUBSPOT_API_KEY);
+      }
+      
       return { success: true, contact };
     } else {
       // Se contato já existe, tentar atualizar
@@ -174,5 +175,44 @@ export async function getHubSpotStats() {
   } catch (error) {
     console.error('Erro ao obter estatísticas HubSpot:', error);
     return { connected: false };
+  }
+}
+
+// Função para adicionar nota a um contato
+async function addNoteToContact(contactId: string, message: string, apiKey: string) {
+  try {
+    const response = await fetch(`https://api.hubapi.com/crm/v3/objects/notes`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        properties: {
+          hs_note_body: message,
+          hs_timestamp: new Date().toISOString()
+        },
+        associations: [
+          {
+            to: { id: contactId },
+            types: [
+              {
+                associationCategory: "HUBSPOT_DEFINED",
+                associationTypeId: 202
+              }
+            ]
+          }
+        ]
+      })
+    });
+
+    if (response.ok) {
+      console.log('Nota adicionada ao contato com sucesso');
+    } else {
+      const error = await response.text();
+      console.warn('Falha ao adicionar nota:', error);
+    }
+  } catch (error) {
+    console.warn('Erro ao adicionar nota:', error);
   }
 }
