@@ -31,22 +31,24 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md" role="banner">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
             <Image
               src="/logo_sem_fundo.webp"
-              alt="Sena Technologies"
+              alt="Sena Technologies - Desenvolvimento Web e Aplicativos Mobile em São Paulo"
               width={250}
               height={60}
               className="h-16 w-auto"
+              priority
             />
           </div>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6" role="navigation" aria-label="Menu principal">
             <Link
               href="#sobre"
               className="text-sm font-medium hover:text-cyan-600 transition-colors"
+              aria-label="Ir para seção Sobre Nós"
             >
               Sobre
             </Link>

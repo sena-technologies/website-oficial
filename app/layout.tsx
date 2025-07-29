@@ -4,51 +4,150 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Analytics from "./components/analytics"
 import ScrollTracker from "./components/scroll-tracker"
+import SEO from "./components/seo"
 import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://senatechnologies.com'),
-  title: "Sena Technologies - Soluções que movem o seu negócio para o próximo nível",
+  metadataBase: new URL('https://senatechnologies.com.br'),
+  title: {
+    default: "Sena Technologies - Desenvolvimento Web, Apps e Sistemas | Sul e Sudeste",
+    template: "%s | Sena Technologies"
+  },
   description:
-    "Especialistas em transformação digital para pequenas empresas, MEIs e profissionais liberais. Desenvolvimento web, apps, sistemas personalizados, bots e integrações.",
-  keywords:
-    "desenvolvimento web, aplicativos mobile, sistemas personalizados, chatbot whatsapp, MEI, pequenas empresas, profissionais liberais, transformação digital",
-  authors: [{ name: "Sena Technologies" }],
+    "🚀 Sena Technologies: Especialistas em desenvolvimento web, aplicativos mobile, sistemas personalizados e automações para MEIs, pequenas empresas e profissionais liberais nas regiões Sul e Sudeste do Brasil. Atendemos SC, PR, RS, SP, RJ, MG e ES. Transformação digital acessível e resultados garantidos.",
+  keywords: [
+    // Keywords principais - Sul
+    "desenvolvimento web Santa Catarina",
+    "desenvolvimento web Joinville",
+    "desenvolvimento web Curitiba",
+    "desenvolvimento web Porto Alegre",
+    "criação de sites Sul do Brasil",
+    
+    // Keywords principais - Sudeste
+    "desenvolvimento web São Paulo",
+    "desenvolvimento web Rio de Janeiro",
+    "desenvolvimento web Belo Horizonte",
+    "criação de sites Sudeste",
+    
+    // Serviços principais
+    "aplicativos mobile",
+    "sistemas personalizados",
+    "chatbot WhatsApp",
+    "e-commerce",
+    "loja virtual",
+    
+    // Long tail keywords - Sul
+    "programador Joinville SC",
+    "desenvolvedor web Curitiba PR",
+    "empresa tecnologia Porto Alegre RS",
+    "sites para empresas Santa Catarina",
+    "aplicativo mobile Paraná",
+    
+    // Long tail keywords - Sudeste
+    "programador São Paulo SP", 
+    "desenvolvedor web Rio de Janeiro RJ",
+    "empresa tecnologia Belo Horizonte MG",
+    "sites para empresas São Paulo",
+    "sistemas personalizados Minas Gerais",
+    
+    // Cidades específicas
+    "Joinville", "Blumenau", "Florianópolis",
+    "Curitiba", "Londrina", "Maringá", 
+    "Porto Alegre", "Caxias do Sul", "Pelotas",
+    "São Paulo", "Campinas", "Santos",
+    "Rio de Janeiro", "Niterói", "Petrópolis",
+    "Belo Horizonte", "Uberlândia", "Juiz de Fora",
+    
+    // Negócio específico
+    "MEI", "pequenas empresas", "profissionais liberais",
+    "transformação digital", "automação comercial",
+    
+    // Técnico
+    "React", "Next.js", "TypeScript", "Node.js",
+    "API", "integração", "CRM", "ERP", "chatbot"
+  ].join(", "),
+  authors: [{ name: "Igor Paes", url: "https://senatechnologies.com.br" }],
   creator: "Sena Technologies",
   publisher: "Sena Technologies",
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://senatechnologies.com",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://senatechnologies.com",
-    title: "Sena Technologies - Soluções que movem o seu negócio para o próximo nível",
+    url: "https://senatechnologies.com.br",
+    title: "Sena Technologies - Desenvolvimento Web Sul e Sudeste do Brasil",
     description:
-      "Especialistas em transformação digital para pequenas empresas, MEIs e profissionais liberais. Soluções acessíveis e eficazes.",
+      "🚀 Transforme seu negócio com soluções digitais personalizadas! Desenvolvemos sites, apps, sistemas e automações para MEIs e pequenas empresas nas regiões Sul e Sudeste. Atendemos SC, PR, RS, SP, RJ, MG, ES. Orçamento gratuito!",
     siteName: "Sena Technologies",
     images: [
       {
         url: "/Frame-3.webp",
         width: 1200,
         height: 630,
+        alt: "Sena Technologies - Desenvolvimento Web Sul e Sudeste do Brasil",
+        type: "image/webp",
+      },
+      {
+        url: "/Frame-3.webp",
+        width: 1200,
+        height: 630,
         alt: "Sena Technologies - Soluções em Tecnologia",
+        type: "image/webp",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sena Technologies - Soluções Inovadoras em Tecnologia",
-    description: "Transformamos ideias em soluções digitais. Entre em contato!",
-    images: ["/logo_oficial_sem_tagline.webp"],
+    site: "@senatechnologies",
+    creator: "@igorpaes",
+    title: "Sena Technologies - Desenvolvimento Web Sul e Sudeste",
+    description: "🚀 Transformamos ideias em soluções digitais! Sites, apps, sistemas e automações nas regiões Sul e Sudeste do Brasil. Orçamento gratuito!",
+    images: [
+      {
+        url: "/logo-sena.webp",
+        alt: "Sena Technologies - Desenvolvimento Web Sul e Sudeste",
+      }
+    ],
   },
-  generator: 'v0.dev'
+  verification: {
+    google: "google-site-verification-code-here",
+    yandex: "yandex-verification-code-here",
+    yahoo: "yahoo-verification-code-here",
+  },
+  category: "Technology",
+  classification: "Software Development",
+  generator: "Next.js 15.2.4",
+  applicationName: "Sena Technologies",
+  referrer: "origin-when-cross-origin",
+  manifest: "/manifest.json",
+  other: {
+    "msapplication-TileColor": "#2d89ef",
+    "msapplication-config": "/browserconfig.xml",
+  },
 }
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#06b6d4',
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  colorScheme: "dark light",
 }
 
 export default function RootLayout({
@@ -63,13 +162,14 @@ export default function RootLayout({
         <link rel="icon" type="image/webp" sizes="16x16" href="/ellipse-1.webp" />
         <link rel="apple-touch-icon" sizes="180x180" href="/ellipse-1.webp" />
         <meta name="msapplication-TileImage" content="/ellipse-1.webp" />
-        <link rel="canonical" href="https://senatechnologies.com" />
+        <link rel="canonical" href="https://senatechnologies.com.br" />
         <meta name="geo.region" content="BR-SC" />
         <meta name="geo.placename" content="JOINVILLE" />
-        <meta name="geo.position" content="-23.5505;-46.6333" />
-        <meta name="ICBM" content="-23.5505, -46.6333" />
+        <meta name="geo.position" content="-26.3044;-48.8487" />
+        <meta name="ICBM" content="-26.3044, -48.8487" />
       </head>
       <body className={inter.className}>
+        <SEO canonical="https://senatechnologies.com.br" />
         <Suspense fallback={<div>Loading...</div>}>
           <Analytics />
           <ScrollTracker />
