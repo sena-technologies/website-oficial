@@ -158,6 +158,16 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        {/* Resource Hints - apenas recursos críticos no head */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        
+        {/* Preload de scripts críticos apenas se necessário */}
+        <link rel="modulepreload" href="/_next/static/chunks/vendors-64358f97d58841aa.js" />
+        
+        {/* Meta tags e links críticos */}
         <link rel="icon" type="image/webp" sizes="32x32" href="/ellipse-1.webp" />
         <link rel="icon" type="image/webp" sizes="16x16" href="/ellipse-1.webp" />
         <link rel="apple-touch-icon" sizes="180x180" href="/ellipse-1.webp" />
@@ -167,11 +177,14 @@ export default function RootLayout({
         <meta name="geo.placename" content="JOINVILLE" />
         <meta name="geo.position" content="-26.3044;-48.8487" />
         <meta name="ICBM" content="-26.3044, -48.8487" />
+        
+        {/* Preload apenas de recursos críticos */}
+        <link rel="preload" href="/ellipse-1.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/logo-sena.webp" as="image" type="image/webp" />
       </head>
       <body className={inter.className}>
         <SEO canonical="https://senatechnologies.com.br" />
         <Suspense fallback={<div>Loading...</div>}>
-          <Analytics />
           <ScrollTracker />
           {children}
         </Suspense>
@@ -185,6 +198,11 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+
+        {/* SCRIPTS MOVIDOS PARA O FINAL - Não bloqueiam renderização */}
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   )
