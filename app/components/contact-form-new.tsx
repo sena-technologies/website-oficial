@@ -100,6 +100,36 @@ export default function ContactFormNew() {
 
       console.log("✅ Email enviado com sucesso!", emailResult)
 
+      // Enviar dados para HubSpot CRM
+      try {
+        console.log("📤 Enviando para HubSpot CRM...")
+        
+        const crmResponse = await fetch('/api/crm', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            company: formData.businessType,
+            message: `Serviço: ${formData.service}\n\nMensagem: ${formData.message}`
+          })
+        })
+
+        const crmResult = await crmResponse.json()
+        
+        if (crmResult.success) {
+          console.log("✅ Contato adicionado ao HubSpot CRM!")
+        } else {
+          console.warn("⚠️ Falha no CRM (mas email foi enviado):", crmResult.error)
+        }
+        
+      } catch (crmError) {
+        console.warn("⚠️ Erro no CRM (mas email foi enviado):", crmError)
+      }
+
       setResult({
         success: true,
         message: "Mensagem enviada com sucesso! Entraremos em contato em até 2 horas."
