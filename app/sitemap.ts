@@ -5,12 +5,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString()
   
   return [
-    // Página principal
+    // Página principal - Joinville SC
     {
       url: baseUrl,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 1.0,
+    },
+    // Seção Portfólio
+    {
+      url: `${baseUrl}#portfolio`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    // Atendimento Joinville
+    {
+      url: `${baseUrl}#sobre`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     // Página de agradecimento
     {

@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import PortfolioSection from "@/components/portfolio-section";
 import {
   ArrowRight,
   CheckCircle,
@@ -22,6 +23,11 @@ import {
   Facebook,
   Linkedin,
   Github,
+  MapPin,
+  Building2,
+  Mountain,
+  MessageCircle,
+  Mail,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -59,6 +65,12 @@ export default function HomePage() {
               Serviços
             </Link>
             <Link
+              href="#portfolio"
+              className="text-sm font-medium hover:text-cyan-600 transition-colors"
+            >
+              Portfólio
+            </Link>
+            <Link
               href="#valores"
               className="text-sm font-medium hover:text-cyan-600 transition-colors"
             >
@@ -92,7 +104,7 @@ export default function HomePage() {
               <div className="space-y-8">
                 <div className="space-y-4">
                   <Badge className="bg-cyan-100 text-cyan-700 hover:bg-cyan-200">
-                    🚀 Transformação Digital
+                    🏭 Joinville-SC | Transformação Digital
                   </Badge>
                   <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                     Soluções que movem o{" "}
@@ -304,6 +316,137 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Localização Section */}
+        <section id="localizacao" className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+          <div className="container px-4 md:px-6">
+            <div className="text-center space-y-4 mb-16">
+              <Badge className="bg-cyan-100 text-cyan-700">
+                📍 Nossa Localização
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Atendemos Joinville-SC e Região
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Baseados em Joinville, cidade polo industrial de Santa Catarina, 
+                atendemos toda a região com proximidade e qualidade.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Joinville - Principal */}
+              <Card className="border-2 border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 hover:shadow-lg transition-shadow">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Building2 className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl">Joinville-SC</CardTitle>
+                  <CardDescription>Nossa base principal</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Atendimento presencial e suporte especializado para empresas em Joinville, maior polo industrial de Santa Catarina.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center justify-center">
+                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      Reuniões presenciais
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      Suporte local
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Vale do Itajaí */}
+              <Card className="bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mountain className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl">Vale do Itajaí</CardTitle>
+                  <CardDescription>Blumenau, Pomerode e Timbó</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Atendimento ágil e próximo para toda a região do Vale do Itajaí, com foco em qualidade e proximidade.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center justify-center">
+                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      Deslocamento rápido
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      Conhecimento local
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Santa Catarina */}
+              <Card className="bg-gradient-to-br from-slate-50 to-blue-100 hover:shadow-lg transition-shadow">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-slate-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl">Santa Catarina</CardTitle>
+                  <CardDescription>Florianópolis, Itajaí, São Bento e demais cidades</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Expansão de atendimento para todo o estado catarinense, com flexibilidade e eficiência.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center justify-center">
+                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      Atendimento remoto
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                      Visitas planejadas
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-lg text-muted-foreground mb-6">
+                Quer saber se atendemos sua região? Entre em contato conosco!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-700 hover:to-green-700"
+                >
+                  <Link
+                    href="https://wa.me/5547999999999?text=Olá,%20gostaria%20de%20saber%20se%20vocês%20atendem%20minha%20cidade."
+                    target="_blank"
+                    className="text-sm font-medium transition-colors flex items-center"
+                  >
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    WhatsApp
+                  </Link>
+                </Button>
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-blue-700 hover:to-purple-700"
+                >
+                  <Link
+                    href="#contato"
+                    className="text-sm font-medium transition-colors flex items-center"
+                  >
+                    <Mail className="h-4 w-4 mr-2" />
+                    Contato
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Serviços Section */}
         <section
           id="servicos"
@@ -471,6 +614,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Portfolio Section */}
+        <PortfolioSection />
 
         {/* Depoimentos Section */}
         <section className="py-20 bg-white">

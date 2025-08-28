@@ -12,22 +12,27 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://senatechnologies.com.br'),
   title: {
-    default: "Sena Technologies - Desenvolvimento Web, Apps e Sistemas | Sul e Sudeste",
-    template: "%s | Sena Technologies"
+    default: "Sena Technologies - Desenvolvimento Web e Apps em Joinville-SC | Santa Catarina",
+    template: "%s | Sena Technologies Joinville-SC"
   },
   description:
     "🚀 Sena Technologies: Especialistas em desenvolvimento web, aplicativos mobile, sistemas personalizados e automações para MEIs, pequenas empresas e profissionais liberais nas regiões Sul e Sudeste do Brasil. Atendemos SC, PR, RS, SP, RJ, MG e ES. Transformação digital acessível e resultados garantidos.",
   keywords: [
-    // Keywords principais - Sul
-    "desenvolvimento web Santa Catarina",
+    // Keywords principais - Joinville e região
     "desenvolvimento web Joinville",
-    "desenvolvimento web Curitiba",
-    "desenvolvimento web Porto Alegre",
-    "criação de sites Sul do Brasil",
+    "criação de sites Joinville SC",
+    "aplicativo mobile Joinville",
+    "sistema web Joinville",
+    "desenvolvimento web Santa Catarina",
+    "criação de sites Blumenau",
+    "desenvolvimento web Florianópolis",
+    "programador Joinville",
+    "desenvolvedor web Santa Catarina",
     
-    // Keywords principais - Sudeste
-    "desenvolvimento web São Paulo",
-    "desenvolvimento web Rio de Janeiro",
+    // Keywords regionais SC
+    "desenvolvimento web Vale do Itajaí",
+    "criação de sites SC",
+    "aplicativo mobile Santa Catarina",
     "desenvolvimento web Belo Horizonte",
     "criação de sites Sudeste",
     

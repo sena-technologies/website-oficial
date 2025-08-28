@@ -9,7 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Otimizações de performance para scripts
   compress: true,
   poweredByHeader: false,
   experimental: {
@@ -26,37 +25,6 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
-  },
-  webpack: (config, { isServer }) => {
-    // Tree shaking otimizado
-    config.optimization.usedExports = true;
-    config.optimization.sideEffects = false;
-    
-    // Configuração simples para MENOS requisições HTTP
-    if (!isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          // UM único chunk vendor para todas as dependências
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            enforce: true,
-          },
-          // Desabilitar outros cache groups
-          default: false,
-          defaultVendors: false,
-        },
-      };
-      
-      // Otimização para scripts defer/async
-      config.optimization.runtimeChunk = 'single';
-      config.optimization.moduleIds = 'deterministic';
-      config.optimization.chunkIds = 'deterministic';
-    }
-    
-    return config;
   },
   // Headers de cache e compressão
   async headers() {
