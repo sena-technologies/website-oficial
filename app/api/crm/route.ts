@@ -19,13 +19,21 @@ export async function POST(request: NextRequest) {
     const lastname = nameParts.slice(1).join(' ') || '';
 
     // Preparar dados para o HubSpot
+    // Criar mensagem formatada com quebras de linha
+    const formattedMessage = `
+Serviço: ${body.service || 'Não informado'}
+
+Mensagem do Cliente:
+${body.message || 'Não informado'}
+    `.trim();
+
     const contactData = {
       email: body.email,
       firstname: firstname,
       lastname: lastname,
       company: body.company || '',
       phone: body.phone || '',
-      message: body.message || '',
+      message: formattedMessage,
       lifecyclestage: 'lead',
       lead_source: 'website_form'
     };

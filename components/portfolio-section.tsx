@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Monitor, ShoppingCart, Users, BarChart, MessageSquare, Calendar, CheckSquare, CreditCard } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface Project {
   id: string
@@ -180,7 +180,17 @@ const categories = [
 ]
 
 export default function PortfolioSection() {
-  const [selectedCategory, setSelectedCategory] = useState("Todos")
+  const [selectedCategory, setSelectedCategory] = useState("")
+const [mounted, setMounted] = useState(false)
+
+useEffect(() => {
+  setMounted(true)
+  setSelectedCategory("Todos")
+}, [])
+
+if (!mounted) {
+  return null // Evita hidratação inconsistente
+}
   
   const filteredProjects = selectedCategory === "Todos" 
     ? projects 

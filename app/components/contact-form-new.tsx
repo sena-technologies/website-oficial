@@ -23,7 +23,13 @@ export default function ContactFormNew() {
 
   useEffect(() => {
     // Inicializar EmailJS com sua Public Key
-    emailjs.init("aRqOWtjO9aJUF-fLZ")
+    emailjs.init({
+      publicKey: "MrFyLf9oJFZpd8POU",
+      limitRate: {
+        // Opcional: limitar tentativas de envio
+        throttle: 2000, // 2s entre envios
+      },
+    })
   }, [])
 
   const handleInputChange = (field: string, value: string) => {
@@ -69,33 +75,25 @@ export default function ContactFormNew() {
       console.log(`⏰ Data/Hora: ${new Date().toISOString()}`)
       console.log("=" .repeat(50))
 
-      // Configurações do EmailJS - Suas credenciais configuradas
-      const emailJSConfig = {
-        serviceID: "service_sa73x5s",   // Seu Service ID
-        templateID: "template_ils4p4k", // Seu Template ID
-        publicKey: "aRqOWtjO9aJUF-fLZ"  // Sua Public Key
-      }
-
       // Preparar dados para envio via EmailJS
       const templateParams = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        businessType: formData.businessType || "Não informado",
-        service: formData.service || "Não informado",
+        from_name: formData.name,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        business_type: formData.businessType || "Não informado",
+        service_type: formData.service || "Não informado",
         message: formData.message || "Não informado",
         timestamp: new Date().toLocaleString('pt-BR'),
-        to_email: "irsp2121@gmail.com" // Substitua pelo seu email
+        to_email: "senatechnologies21@gmail.com"
       }
 
       console.log("📤 Enviando via EmailJS...", templateParams)
 
       // Enviar email via EmailJS
       const emailResult = await emailjs.send(
-        emailJSConfig.serviceID,
-        emailJSConfig.templateID,
-        templateParams,
-        emailJSConfig.publicKey
+        "service_upq3tvj",  // Service ID
+        "template_20kne38", // Template ID
+        templateParams
       )
 
       console.log("✅ Email enviado com sucesso!", emailResult)
@@ -145,23 +143,18 @@ export default function ContactFormNew() {
         message: ""
       })
 
-    } catch (error) {
-      console.error("❌ Erro ao enviar via EmailJS:", error)
-      
-      // Fallback: ainda mostrar sucesso para o usuário (dados logados)
-      setResult({
-        success: true,
-        message: "Formulário enviado! Se houver problemas técnicos, entre em contato pelo WhatsApp."
+    } catch (error: any) {
+      console.error("❌ Erro ao enviar via EmailJS:", {
+        error,
+        name: error?.name,
+        message: error?.message,
+        stack: error?.stack,
+        details: JSON.stringify(error)
       })
-
-      // Limpar formulário mesmo com erro
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        businessType: "",
-        service: "",
-        message: ""
+      
+      setResult({
+        success: false,
+        message: "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente ou entre em contato pelo WhatsApp."
       })
     } finally {
       setIsLoading(false)

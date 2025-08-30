@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import ContactFormNew from "./components/contact-form-new";
+import ContactFormNew from "@/app/components/contact-form-new";
 
 export default function HomePage() {
   return (
