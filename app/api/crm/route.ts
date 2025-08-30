@@ -20,12 +20,14 @@ export async function POST(request: NextRequest) {
 
     // Preparar dados para o HubSpot
     // Criar mensagem formatada com quebras de linha
-    const formattedMessage = `
-Serviço: ${body.service || 'Não informado'}
-
-Mensagem do Cliente:
-${body.message || 'Não informado'}
-    `.trim();
+    const formattedMessage = [
+      `Detalhes do Contato:`,
+      `• Serviço Solicitado: ${body.service || 'Não informado'}`,
+      `• Tipo de Negócio: ${body.company || 'Não informado'}`,
+      ``,
+      `Mensagem do Cliente:`,
+      body.message || 'Não informado'
+    ].join('\n');
 
     const contactData = {
       email: body.email,

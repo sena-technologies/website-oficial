@@ -112,7 +112,8 @@ export default function ContactFormNew() {
             email: formData.email,
             phone: formData.phone,
             company: formData.businessType,
-            message: `Serviço: ${formData.service}\n\nMensagem: ${formData.message}`
+            service: formData.service,
+            message: formData.message
           })
         })
 
