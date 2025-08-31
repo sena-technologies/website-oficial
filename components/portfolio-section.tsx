@@ -48,7 +48,9 @@ const projects: Project[] = [
       "Formulário de contato"
     ],
     icon: <Users className="h-6 w-6" />,
-    gradient: "from-blue-600 to-indigo-700"
+    gradient: "from-blue-600 to-indigo-700",
+    demoUrl: "https://site-institucional-silva-associados.vercel.app/",
+    codeUrl: "https://github.com/sena-technologies/site-institucional-silva-associados-adv"
   },
   {
     id: "curso-beleza",
@@ -308,23 +310,46 @@ if (!mounted) {
                 
                 {/* Botões */}
                 <div className="flex space-x-2 pt-4">
-                  <Button 
-                    size="sm" 
-                    className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90`}
-                    onClick={() => window.open(`#portfolio-${project.id}`, '_blank')}
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Ver Demo
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline" 
-                    className="flex-1"
-                    onClick={() => window.open(`https://github.com/sena-technologies/${project.id}`, '_blank')}
-                  >
-                    <Github className="h-4 w-4 mr-2" />
-                    Código
-                  </Button>
+                  {project.demoUrl ? (
+                    <Button 
+                      size="sm" 
+                      className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90`}
+                      onClick={() => window.open(project.demoUrl, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Ver Projeto
+                    </Button>
+                  ) : (
+                    <Button 
+                      size="sm" 
+                      className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90`}
+                      onClick={() => window.open(`#portfolio-${project.id}`, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Ver Demo
+                    </Button>
+                  )}
+                  {project.codeUrl ? (
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.open(project.codeUrl, '_blank')}
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      Código
+                    </Button>
+                  ) : (
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.open(`https://github.com/sena-technologies/${project.id}`, '_blank')}
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      Código
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
