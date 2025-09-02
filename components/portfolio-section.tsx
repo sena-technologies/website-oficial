@@ -57,7 +57,7 @@ const projects: Project[] = [
     title: "Landing Page - Curso Beauty Master",
     description: "Landing page de alta conversão para lançamento de curso online",
     category: "Sites Institucionais & Landing Pages",
-    technologies: ["Next.js", "TailwindCSS", "Framer Motion"],
+    technologies: ["HTML5", "CSS3", "JavaScript", "Apache", "Schema.org"],
     features: [
       "Seção de benefícios",
       "Depoimentos de alunos",
