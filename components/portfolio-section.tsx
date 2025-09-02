@@ -54,7 +54,7 @@ const projects: Project[] = [
   },
   {
     id: "curso-beleza",
-    title: "Landing Page - Curso Beleza em Casa",
+    title: "Landing Page - Curso Beauty Master",
     description: "Landing page de alta conversão para lançamento de curso online",
     category: "Sites Institucionais & Landing Pages",
     technologies: ["Next.js", "TailwindCSS", "Framer Motion"],
@@ -65,7 +65,9 @@ const projects: Project[] = [
       "Contador regressivo"
     ],
     icon: <Monitor className="h-6 w-6" />,
-    gradient: "from-pink-500 to-purple-600"
+    gradient: "from-pink-500 to-purple-600",
+    demoUrl: "https://curso-auto-maquiagem.vercel.app/",
+    codeUrl: "https://github.com/sena-technologies/curso-auto-maquiagem"
   },
   {
     id: "agenda-facil",
